@@ -5,7 +5,7 @@ Rancher K101 training files and notes
 
 This repo contains guides and notes for Rancher K101 course
 
-## Installation
+## Installation RKE
 
 1. Install Vagrant
 2. Install rke
@@ -33,3 +33,12 @@ This repo contains guides and notes for Rancher K101 course
 * Certificates cannot be regenerated after install.: False
 * You can add additional nodes to an RKE cluster after initial deployment. : True
 * Which of the following is NOT something that RKE manages? Determining the correct amount of nodes for a Kubernetes cluster 
+
+## Install Rancher as container
+
+
+### Run runcher with Podman as self-signed certificate
+
+```bash
+sudo podman run -d --restart=always -p 80:80 -p 443:443 -v /opt/rancher:/var/lib/rancher rancher/rancher:v2.4.1
+```
