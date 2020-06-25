@@ -3,17 +3,33 @@ Rancher K101 training files and notes
 
 ## Overview
 
-This repo contains guides and notes for Rancher K101 course
+This repo contains guides and notes for [Rancher K101 course](https://academy.rancher.com)
 
-## Installation RKE
+### Installation of RKE
 
 1. Install Vagrant
 2. Install rke
 3. Clone this repo
-4. Run vagrant up
-5. Run rke up
+4. Create kubernetes master and worker nodes:
+```
+vagrant up
+```
+5. Install RKE distribution:
+```bash
+rke up
+```
+6. Set up kube config file for current sesstion
+```bash
+export KUBECONFIG=$(pwd)/kube_config_cluster.yml
+```
+7. Verify that you can connect to K8S cluster
+```
+kubectl get nodes
+```
 
-#Quiz
+## Quiz
+
+## 1. Intro to Rancher and RKE
 
 ### 1.2 Discovering RKE
 
@@ -32,13 +48,50 @@ This repo contains guides and notes for Rancher K101 course
 * Upgrading Kubernetes involves changing the version in the system_images key and running rke upgrade.: False
 * Certificates cannot be regenerated after install.: False
 * You can add additional nodes to an RKE cluster after initial deployment. : True
-* Which of the following is NOT something that RKE manages? Determining the correct amount of nodes for a Kubernetes cluster 
+* Which of the following is NOT something that RKE manages? Determining the correct amount of nodes for a Kubernetes cluster
+
+## 2. Installing and Managing Rancher
+
+### 2.1 Installing Rancher with Kubernetes
+
+* When might you want to use the Docker method for installing Rancher? For sandbox or demonstration purposes
+* The first step in backing up a single container Docker install is stopping the container.: True
+* Upgrading Rancher is similar to making a backup except we start a container with a new image tag: True
+* Why do you want to delete the old Rancher container after an upgrade?:  So it doesnt startup accidentally and overwrite the data volume correct
 
 ## Install Rancher as container
-
 
 ### Run runcher with Podman as self-signed certificate
 
 ```bash
 sudo podman run -d --restart=always -p 80:80 -p 443:443 -v /opt/rancher:/var/lib/rancher rancher/rancher:v2.4.1
+```
+
+## Installing Rancher with Kubernetes
+
+### Deploying Into RKE
+
+1. Install nodes and RKE
+2. Install helm3
+```bash
+wget https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz -O /tmp/helm-v3.2.4-linux-amd64.tar.gz
+tar xvzf /tmp/helm-v3.2.4-linux-amd64.tar.gz -C /tmp
+mv /tmp/linux-amd64/helm ~/bin/helm3
+chmod +x ~/bin/helm3
+```
+3.  Add Helm3 Rancher repo
+```bash
+helm3 repo add rancher-latest https://releases.rancher.com/server-charts/latest
+```
+4. Follow other steps from [guide](https://rancher.com/docs/rancher/v2.x/en/installation/k8s-install/helm-rancher/#3-create-a-namespace-for-rancher)
+
+
+
+
+# Tips
+
+## Reset admin password
+
+```bash
+kubectl --kubeconfig $KUBECONFIG -n cattle-system exec $(kubectl --kubeconfig $KUBECONFIG -n cattle-system get pods -l app=rancher | grep '1/1' | head -1 | awk '{ print $1 }') -- reset-password
 ```
