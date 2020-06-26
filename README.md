@@ -52,12 +52,22 @@ kubectl get nodes
 
 ## 2. Installing and Managing Rancher
 
-### 2.1 Installing Rancher with Kubernetes
+### 2.1 Installing Rancher with Docker
 
 * When might you want to use the Docker method for installing Rancher? For sandbox or demonstration purposes
 * The first step in backing up a single container Docker install is stopping the container.: True
 * Upgrading Rancher is similar to making a backup except we start a container with a new image tag: True
 * Why do you want to delete the old Rancher container after an upgrade?:  So it doesnt startup accidentally and overwrite the data volume correct
+
+### 2.2 Installing Rancher with Kubernetes
+
+* Which of the following is a valid type of load balancer when fronting Rancher server?: A TCP-based load balancer correct 
+* Its possible to migrate from alpha to latest, but not to stable.: False
+* Which type of TLS certificate can you use with Rancher?: All of options
+* Lets Encrypt doesnt actually use the email address you give them.: False
+* How do you make a backup of Rancher in RKE?: Make a normal RKE backup
+* You can restore a Rancher/RKE backup with zero downtime.: False
+* You can roll back a failed Rancher upgrade with helm rollback.: False
 
 ## Install Rancher as container
 
