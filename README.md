@@ -71,12 +71,27 @@ kubectl get nodes
 
 ## 3. Deploying Kubernetes With Rancher
 
-### 2.1 Designing and Provisioning Clusters
+### 3.1 Designing and Provisioning Clusters
 
 * Which features are unavailable with Hosted Kubernetes Clusters?: etcd backup/restore and some monitoring of etcd
 * What is the difference between a Node Template and an RKE Template?:  Node templates describe how to provision nodes and RKE templates how to deploy Kubernetes
 * Where can you find detailed information on the port requirements for each role?: Rancher Documentation
 * When you create a cluster in Rancher, what RBAC role are you assigned?  Owner
+
+### 3.2 Deploying Kubernetes with Rancher
+
+
+* Which is true about RKE Templates?: They specify the Kubernetes configuration options that should be used
+* Node Templates allow you to deploy new nodes without having to re-enter the node parameters. True
+* What is the purpose of a cloud provider?: To allow Kubernetes to leverage cloud-specific features such as load balancers and network storage
+* To use the Custom provider only requires that a supported version of Docker to be installed on the node.: True
+* The command provided by the custom provider can be used repeatedly on each node you want to provision for that role.: True
+* If you already deployed a Kubernetes cluster, you cant ever import that cluster into Rancher.: False
+* Which is the best provider if you are provisioning with Terraform?: Custom Provider
+* Imported clusters have a special import flag that enables you to manage the nodes from within Rancher.: False
+* The best practice is to colocate etcd, control plane, and worker roles on a single node in downstream Kubernetes clusters.: False
+* Which network provider works with Windows clusters? Flannel
+
 
 ## Install Rancher as container
 
