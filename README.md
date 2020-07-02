@@ -121,7 +121,7 @@ kubectl get nodes
 ### 3.3 Performing basic troubleshooting
 
 * How do you check the logs for the Rancher api-server?: Using Kubectl with the
-  logs subcommand for one of the pods in the cattle-system namespace 
+  logs subcommand for one of the pods in the cattle-system namespace
 * Where can you find details on node sensors?: kubectl describe node < node
   name >
 * Infrastructure issues on a particular node are often revealed by the kubelet
@@ -159,7 +159,7 @@ kubectl get nodes
 * Where is the link to download the Rancher CLI?:  In the bottom right of the
   UI
 * How can you see what API keys are active for your account?:  Click on your
-  user profile icon in the top right and select "API & Keys"  
+  user profile icon in the top right and select "API & Keys"
 
 ### 4.3 Interacting With Monitoring and Logging
 
@@ -174,6 +174,21 @@ kubectl get nodes
   Monitoring section under tools at either the Cluster or Project level
   contexts and enabling first at the desired context
 * Which of the following is NOT one of the log destinations?: InfluxDB
+
+
+### 4.4. Configuring Namespaces and Namespace Groups
+
+* A Project can have more than one namespace.: True
+* Which CNI supports project level isolation?: Canal
+* Resources in different namespaces in the same Project cannot use the same
+  name.: False
+* Which of the following can only be assigned to a namespace?: Service
+  discovery records
+* Rancher recommends assigning Pod Security Policies to Projects.: False
+* What is a resource quota for?:  Controlling the amount of resources a Project
+  can use
+* Why would you set a default resource limit on a Project?:  To set a limit on
+  workloads that dont set one in their configuration
 
 ## Install Rancher as container
 
