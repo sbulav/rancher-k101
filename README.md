@@ -92,6 +92,29 @@ kubectl get nodes
 * The best practice is to colocate etcd, control plane, and worker roles on a single node in downstream Kubernetes clusters.: False
 * Which network provider works with Windows clusters? Flannel
 
+### 3.3 Performing basic troubleshooting
+
+* How do you check the logs for the Rancher api-server?: Using Kubectl with the logs subcommand for one of the pods in the cattle-system namespace 
+* Where can you find details on node sensors?: kubectl describe node < node name >
+* Infrastructure issues on a particular node are often revealed by the kubelet logs: True
+* Docker daemon logs are useful for understanding if an image cannot be pulled for some reason. : True
+
+### 3.4 Performing advanced troubleshooting
+
+* How do you find the logs for etcd in an RKE cluster?:  Using Docker logs
+* Control plane nodes only have one active controller manager so log data may not be present equally across nodes.: True
+* What is the purpose of nginx-proxy?:  So non-control plane nodes can reach control plane components without knowing node addresses
+* Which log is the best place to start the troubleshooting process?: Rancher API server logs
+* What is a common cause of CNI failure?:  Network port restrictions between nodes
+
+## 4. Managing Kubernetes with Rancher
+
+### 4.1 Editing Clusters
+
+* After provisioning a cluster, you can change the network provider in the cluster options on the Edit screen.: False
+* In what circumstances should you take a backup?:  Before starting a Kubernetes upgrade
+* When you update the version of a Kubernetes cluster, it immediately starts updating the worker, control plane, and etcd nodes with new components.: True
+
 
 ## Install Rancher as container
 
