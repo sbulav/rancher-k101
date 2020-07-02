@@ -190,6 +190,20 @@ kubectl get nodes
 * Why would you set a default resource limit on a Project?:  To set a limit on
   workloads that dont set one in their configuration
 
+### 4.5 Working inside of a Project
+
+* Which of these is the most accurate?:  Namespaces cannot move to a Project
+  with resource quotas
+* You cannot use Rancher Advanced Monitoring to scrape metrics from your
+  workloads.: False
+* Where are notifiers configured?: At the cluster level
+* Rancher does not offer any monitoring without first activating Advanced
+  Monitoring.: False
+* If logging is enabled in the Project, it must be deactivated at the Cluster
+  level.: False
+* Which of these is used to create direct queries to Prometheus for alerts in
+  Rancher? : PromQL
+
 ## Install Rancher as container
 
 ### Run runcher with Podman as self-signed certificate
