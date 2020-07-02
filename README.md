@@ -115,6 +115,21 @@ kubectl get nodes
 * In what circumstances should you take a backup?:  Before starting a Kubernetes upgrade
 * When you update the version of a Kubernetes cluster, it immediately starts updating the worker, control plane, and etcd nodes with new components.: True
 
+### 4.2 Using CLI Tools
+
+* Where does the kubectl CLI tool make API calls?:  The Kubernetes API of the cluster you are working with
+* Where is the link to download the Rancher CLI?:  In the bottom right of the UI
+* How can you see what API keys are active for your account?:  Click on your user profile icon in the top right and select "API & Keys"
+* Why might you use the Rancher CLI instead of kubectl?:  All of the above
+
+### 4.3 Interacting With Monitoring and Logging
+
+* Enabling Advanced Monitoring deploys Prometheus and Grafana.: True
+* How do you see the Grafana dashboard for a given component? By clicking the Grafana icon next to a component in the UI
+* What is the role of a notifier?:  Handles delivery of alerts from Prometheus to a destination such as Email or Pagerduty
+* What types of clusters permit alerts for etcd?:  Clusters that are built using RKE
+* How do you enable project vs. cluster-wide monitoring?:  Selecting the Monitoring section under tools at either the Cluster or Project level contexts and enabling first at the desired context
+* Which of the following is NOT one of the log destinations?: InfluxDB
 
 ## Install Rancher as container
 
