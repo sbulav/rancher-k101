@@ -236,6 +236,31 @@ kubectl get nodes
 * You can only have one StorageClass defined per cluster.: False
 * Rancher allows you to have multiple default StorageClasses.: False
 
+### 5.3 Dynamic Data with ConfigMaps, Secrets and Certificates
+
+* Where do ConfigMaps get stored?:  Kubernetes datastore
+* You can store text files in ConfigMaps.: True
+* You can only assign a Secret to a Project.: False
+* Kubernetes encrypts Secrets at rest by default.: False
+* Where can you find more information about how to configure additional
+  security for Secrets in RKE?:  Rancher Hardening Guide
+
+### 5.4 Understanding Service Discovery and Load Balancing
+
+* The ClusterIP for a Service changes whenever the Workload is upgraded.: False
+* How do you configure a Kubernetes Ingress to terminate TLS/SSL?:  By
+  uploading your certs as a Certificate and configuring the Ingress with a
+  reference to that Certificate correct
+* Which of the following is NOT true about Ingress?:  It is only available in
+  the cloud
+* Which DNS record type does an ExternalName mimic?  A record or CNAME record
+* Which layer has the most intelligence for traffic management?  Layer 7
+* What is required for LoadBalancer services to provision?  Cloud provider
+  configuration
+* Which of the following is NOT available as an ingress controller?:  None of
+  the above
+* What can you use to dynamically generate certificates?:  Cert Manager
+
 ## Install Rancher as container
 
 ### Run runcher with Podman as self-signed certificate
