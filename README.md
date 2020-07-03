@@ -204,6 +204,38 @@ kubectl get nodes
 * Which of these is used to create direct queries to Prometheus for alerts in
   Rancher? : PromQL
 
+## 5. Running Kubernetes Workloads
+
+### 5.1 Deploying and managin Workloads
+
+* Which of the following WOULD NOT prevent a workload from being scheduled on a
+  node?: Liveness Probe
+* You can deploy a workload by importing YAML through the Rancher UI.: True
+* Why should you not use the latest tag for container images?: All of the above
+* Rancher will create services for ports that you configure in the Workload
+  deployment screen.: True
+* Where can Rancher pull environment variables from?: All of the above
+* The best way to deploy a workload is to tell Rancher the specific node to run
+  the workload on.: False
+* Which of the following is NOT a health check method for Workloads?: UDP
+* Which of the following CANNOT be used as a volume?: Environment variable
+* Changing the console type has no effect on Ranchers ability to collect log
+  data from stdout/stderr.: False
+* How do you tell Rancher to launch a Pod with multiple containers?: Launch the
+  pod with the primary container and then add sidecars
+* How many revisions can you list when doing a rollback?: All of them
+
+### 5.2 Using Persistent Storage
+
+* Common cloud providers have their storage providers built into
+  Rancher/Kubernetes.: True
+* Which of the following provisioning types allows Kubernetes to allocate
+  storage as users request it?: Dynamic Provisioning
+* Where are storage classes configured?: Cluster level
+* How can you attach storage to a workload?: All of the above
+* You can only have one StorageClass defined per cluster.: False
+* Rancher allows you to have multiple default StorageClasses.: False
+
 ## Install Rancher as container
 
 ### Run runcher with Podman as self-signed certificate
