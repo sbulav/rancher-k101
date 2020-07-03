@@ -261,7 +261,30 @@ kubectl get nodes
   the above
 * What can you use to dynamically generate certificates?:  Cert Manager
 
+### 5.5 Discovering the Rancher Application Catalog
+
+* Which of the following is NOT a valid format for Rancher to use as a catalog
+  repo?:  A SVN server
+* What happens when there is a newer version of a Helm chart made available in
+  a catalog repo?:  The page of installed apps will show that the app has an
+  upgrade available
+* Helm apps are installed through a Rancher service account with administrator
+  privileges.: False
+* What is the difference between a Helm chart and a Rancher app?:  Helm charts
+  require you to enter key/value pairs for answers and Rancher apps use a form
+  to configure the answers
+* A catalog that is enabled at the Global scope can be disabled at the Project
+  scope.: False
+* Who can add new catalogs?:  It depends on the RBAC permissions for the
+  account and the scope at which the catalog is being added
+* You can clone an application into the same namespace.: False
+* You can roll back an application to a previous version from the UI.: True
+* What is the proper way to delete an application?:  Delete the application and
+  then delete the namespace
+
+
 ## Install Rancher as container
+
 
 ### Run runcher with Podman as self-signed certificate
 
